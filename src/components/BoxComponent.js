@@ -12,7 +12,7 @@ const style = {
 };
 
 const BoxComponent = ({ sqr }) => {
-    console.log("sqr : ", sqr);
+    //console.log("sqr : ", sqr);
     return (
         <div style={style}>
             {

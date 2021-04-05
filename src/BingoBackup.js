@@ -16,38 +16,13 @@ const Bingo = () => {
     const [ind, setInd] = useState('')
     const [index, setIndex] = useState(0)
     const [index1, setIndex1] = useState()
-    const winner = calculateWinner(bingoBox);
-    console.log("Winer : ", winner);
-    //console.log("bingoBox ---->: ", bingoBox);
+    //const winner = calculateWinner(bingoBox);
+    //console.log("Winer : ", winner);
+    console.log("bingoBox : ", bingoBox);
 
-    /* if (bingoBox[0][0] === "Y" && bingoBox[0][1] === "Y" && bingoBox[0][2] === "Y") {
-        console.log('Winner 0-1-2')
-    } else if (bingoBox[0][3] === "Y" && bingoBox[0][4] === "Y" && bingoBox[0][5] === "Y") {
-        console.log('Winner 3-4-5')
-    } */
-
-    const checkWinner = () => {
-        console.log("Winner --------> : ", winner);
-        console.log("Winner length --------> : ", winner.length);
-        winner.map((v, i) => {
-            console.log("Winner value : ", v);
-        })
-        /* if (winner !== null) {
-            console.log("Yes winner ");
-        } */
-
-        // if (winner.length > 2) {
-        //     console.log("Match Win");
-        // }
-
-        // if (winner.length > 0) {
-        //     console.log("Winner --------> : ", winner);
-        //     winner.map((v, i) => {
-        //         console.log("Winner value : ", v);
-        //     })
-        // }
-    }
-    checkWinner();
+    // if (bingoBox[0] === "Y" && bingoBox[1] === "Y" && bingoBox[2] === "Y") {
+    //     console.log('Winner')
+    // }
 
     const opt = [
         {
@@ -101,17 +76,23 @@ const Bingo = () => {
     }, [])
     useEffect(() => {
         index > 8 ? clearInterval(id) : console.log('');
-        //winner.length > 2 || index > 8 ? clearInterval(id) : console.log('');
+        // bingoBox.map((val, i) => {
+        //     let ab = val.indexOf(Number(index1));
+        //     //setBingoBox(bingoBox[i][ab] = 'Y')
+        //     bingoBox[i][ab] = 'Y'
+        //     //console.log(`val : ${val} i : ${i}    Value : ${index1} index : ${ab}`);
+        // })
+
     }, [index])
 
-    useEffect(() => {
-        //console.log("bingoBox : ", bingoBox);
-    }, [bingoBox])
-
     const setMatchedAns = () => {
+        //let x;
+        // let ab
         index1 ?
             bingoBox.map((val, i) => {
                 let ab = val.indexOf(Number(index1));
+                //setBingoBox(bingoBox[i][ab] = 'Y')
+                // bingoBox[i][ab] = 'Y'
                 ab >= 0 ?
                     setBingoBox(oldVal => [...oldVal, bingoBox[i][ab] = 'Y'])
                     //console.log(`val : ${val} i : ${i}    Value : ${index1} index : ${ab}`);
@@ -121,6 +102,14 @@ const Bingo = () => {
             : console.log('');
     }
     setMatchedAns();
+    // index1 ?
+    //     bingoBox.map((val, i) => {
+    //         let ab = val.indexOf(Number(index1));
+    //         setBingoBox(bingoBox[i][ab] = 'Y')
+    //         //bingoBox[i][ab] = 'Y'
+    //         //console.log(`val : ${val} i : ${i}    Value : ${index1} index : ${ab}`);
+    //     })
+    //     : console.log('');
     return (
         <>
             <div style={{ marginLeft: '50px', marginTop: '60px' }}>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SelectComponent = (props) => {
-    console.log("p : ", props.optVal);
+    //console.log("p : ", props.optVal);
     const setNumUsers = (e) => {
         let x = e.target.value;
         props.onSelectChange(x);
