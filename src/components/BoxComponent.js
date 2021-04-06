@@ -8,11 +8,10 @@ const style = {
     height: '250px',
     margin: '0 auto',
     display: 'grid',
-    gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
+    gridTemplate: 'repeat(5, 1fr) / repeat(5, 1fr)'
 };
 
 const BoxComponent = ({ sqr }) => {
-    //console.log("sqr : ", sqr);
     return (
         <div style={style}>
             {
@@ -20,7 +19,6 @@ const BoxComponent = ({ sqr }) => {
                     <ButtonComponent key={i} value={val} />
                 ))
             }
-
         </div>
     )
 }

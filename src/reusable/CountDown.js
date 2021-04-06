@@ -10,7 +10,7 @@ const CountDown = () => {
                     return [true, 1000] // repeat animation in 1.5 seconds
                 }} */
                 isPlaying
-                duration={5}
+                duration={10}
                 colors={[
                     ['#004777', 0.33],
                     ['#F7B801', 0.33],
